@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+        <script type="text/javascript"> 
+            var socket = io.connect('ws://localhost:8000')
+            /*socket.on('connect', function() {
+                console.log('Connected');
+            })*/
+            socket.on('updates', function(data) {
+                console.log('Updating')
+                console.log(data);
+            })
+            /*var socket = new WebSocket('ws://localhost:8000/socket.io/');
+            socket.onmessage = function(event) {
+                console.log(event.data);
+            }*/
+        </script>
+    </head>
+</html>
